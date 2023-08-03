@@ -136,36 +136,47 @@
 
 
         // document.getElementsByClassName("day").style.color = "blue";
-        const day31 = document.getElementById("31");
-        let day31L = localStorage.getItem("31")
-        day31.addEventListener("click", function () {
-            console.log("Clicked");
-            // this.style.backgroundColor="#e8d6c4 ";
+
+        function dayX(dayId) {
+            const dayDoc = document.getElementById(dayId);
+            let dayLocal = localStorage.getItem(dayId)
+            dayDoc.addEventListener("click", function () {
+                console.log("Clicked");
+                // this.style.backgroundColor="#e8d6c4 ";
 
 
-            /* Local Storage */
-            localStorage.getItem("31")
-            // if(true) {
-            //     localStorage.setItem("31", true);
-            //     let day31L = localStorage.getItem("31")
-            //     console.log(day31L);
-            // }
-            // day31.style.color = "green";
-            // localStorage.setItem("31", true);
-            if (localStorage.getItem("31") == "false") {
-                day31.style.color = "green";
-                localStorage.setItem("31", true);
-                day31L = localStorage.getItem("31")
-                console.log(day31L);
-            }
-            else if (localStorage.getItem("31") == "true") {
-                day31.style.color = "red";
-                localStorage.setItem("31", false);
-                day31L = localStorage.getItem("31")
-                console.log(day31L);
-            }
-            // console.log(localStorage);
-        })
+                /* Local Storage */
+                localStorage.getItem(dayId)
+                // localStorage.getItem("31")
+                // if(true) {
+                //     localStorage.setItem("31", true);
+                //     let day31L = localStorage.getItem("31")
+                //     console.log(day31L);
+                // }
+                // day31.style.color = "green";
+                // localStorage.setItem("31", true);
+                if (localStorage.getItem(dayId) == "false") {
+                    dayDoc.style.color = "green";
+                    localStorage.setItem(dayId, true);
+                    dayLocal = localStorage.getItem(dayId)
+                    console.log(dayLocal);
+                }
+                else if (localStorage.getItem(dayId) == "true") {
+                    dayDoc.style.color = "red";
+                    localStorage.setItem(dayId, false);
+                    dayLocal = localStorage.getItem(dayId)
+                    console.log(dayLocal);
+                }
+                // console.log(localStorage);
+            })
+        }
+        for (let i = 1; i <= 31; i++) {
+            dayX(i);
+            
+        }
+
+
+
         // day.style.color = "red";
 
 
