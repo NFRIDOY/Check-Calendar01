@@ -146,7 +146,7 @@
 
 
                 /* Local Storage */
-                localStorage.getItem(dayId)
+                // localStorage.getItem(dayId)
                 // localStorage.getItem("31")
                 // if(true) {
                 //     localStorage.setItem("31", true);
@@ -156,13 +156,13 @@
                 // day31.style.color = "green";
                 // localStorage.setItem("31", true);
                 if (localStorage.getItem(dayId) == "false") {
-                    dayDoc.style.color = "green";
+                    dayDoc.style.color = "red";
                     localStorage.setItem(dayId, true);
                     dayLocal = localStorage.getItem(dayId)
                     console.log(dayLocal);
                 }
                 else if (localStorage.getItem(dayId) == "true") {
-                    dayDoc.style.color = "red";
+                    dayDoc.style.color = "Turquoise";
                     localStorage.setItem(dayId, false);
                     dayLocal = localStorage.getItem(dayId)
                     console.log(dayLocal);
@@ -170,9 +170,9 @@
                 // console.log(localStorage);
             })
         }
+        // call dayX fuction for 31 days
         for (let i = 1; i <= 31; i++) {
             dayX(i);
-            
         }
 
 
