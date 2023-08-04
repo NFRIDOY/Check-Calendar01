@@ -1,5 +1,6 @@
 # Check-Calendar01
 ## Live Link (netlify.app) => https://check-calendar01.netlify.app/
+## Live Link (github.com) => https://nfridoy.github.io/Check-Calendar01/
 # github Setup
 …or create a new repository on the command line
 ~~~
