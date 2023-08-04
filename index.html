@@ -100,7 +100,7 @@
                 <div id="27" class="day">27</div>
                 <div id="28" class="day">28</div>
                 <div id="29" class="day">29</div>
-                <div id="30" class="day d30">30</div>
+                <div id="30" class="day">30</div>
                 <div id="31" class="day">31</div>
             </section>
         </div>
@@ -111,10 +111,34 @@
     <!--Blank cell for Sunday-->
     <!--Blank cell for Monday-->
     <script>
+        /* Fatch data from localStorage */
+        function fatch(dayId) {
+            let dayDoc = document.getElementById(dayId);
+            
+            if (localStorage.getItem(dayId) == "false") {
+                    dayDoc.style.color = "#000000";
+                    // dayDoc.style.color = "red";
+                    // localStorage.setItem(dayId, true);
+                    dayLocal = localStorage.getItem(dayId)
+                    console.log(dayLocal);
+                }
+                else if (localStorage.getItem(dayId) == "true") {
+                    dayDoc.style.color = "red";
+                    // localStorage.setItem(dayId, false);
+                    dayLocal = localStorage.getItem(dayId)
+                    console.log(dayLocal);
+                }
+        }
+        for (let i = 1; i <= 31; i++) {
+            fatch(i);
+        }
+
+        /* Reset btn to black */
         function resetStyle(x) {
             let day = document.getElementById(x);
             day.style.color = "#000000";
         }
+
 
 
         /* Reset Btn */
@@ -162,7 +186,8 @@
                     console.log(dayLocal);
                 }
                 else if (localStorage.getItem(dayId) == "true") {
-                    dayDoc.style.color = "Turquoise";
+                    // dayDoc.style.color = "Turquoise";
+                    dayDoc.style.color = "black";
                     localStorage.setItem(dayId, false);
                     dayLocal = localStorage.getItem(dayId)
                     console.log(dayLocal);
