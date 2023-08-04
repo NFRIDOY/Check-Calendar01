@@ -34,6 +34,7 @@
             text-align: center;
             padding: 5px;
             background-color: #f0f0f0;
+            font-weight:700;
         }
 
         .day:hover {
@@ -50,6 +51,10 @@
             border: none;
             font-size: 10px;
             width: 100%;
+            color: orange;
+            background-color: #333;
+            padding: 5px;
+            border-radius: 10px;
         }
         .footer{
             text-align: center;
@@ -61,6 +66,11 @@
             text-decoration: none;
             color: turquoise;
         }
+        .note {
+            color: blueviolet;
+            text-align: center;
+            font-size: x-small;
+        }
 
         /* .d30{
             color: aqua;
@@ -70,9 +80,12 @@
 
 <body>
     <main>
+        <p class="note">Note: Please Click Reset Button If You Are A New User.</p>
+        <p class="note">Note: If You Are An Old User Click Reset Button If Needed.</p>
         <div class="calendar">
             <div class="header">
                 <h1>Check Calendar</h1>
+                <h6>By <a href="https://github.com/NFRIDOY">NF RIDOY</a></h6>
             </div>
             <div class="calendarMark">
                 <section class="dayNames">
@@ -86,8 +99,8 @@
                 </section>
     
                 <section class="days">
-                    <div id="" class="day"></div>
                     <div class="day"> <span id="reset"> Reset </span></div>
+                    <div id="" class="day"></div>
                     <div id="1" class="day">1</div>
                     <div id="2" class="day">2</div>
                     <div id="3" class="day">3</div>
@@ -202,6 +215,7 @@
                 // localStorage.setItem("31", true);
                 if (localStorage.getItem(dayId) == "false") {
                     dayDoc.style.color = "red";
+                    // dayDoc.style.fontWeight = "800";
                     localStorage.setItem(dayId, true);
                     dayLocal = localStorage.getItem(dayId)
                     console.log(dayLocal);
