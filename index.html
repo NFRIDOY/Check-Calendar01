@@ -45,6 +45,22 @@
             display: grid;
             grid-template-columns: repeat(7, 1fr);
         }
+        #reset{
+            /* margin-top : -9%; */
+            border: none;
+            font-size: 10px;
+            width: 100%;
+        }
+        .footer{
+            text-align: center;
+            margin-top: 30px;
+            margin-bottom: 30px;
+            font-size: small;
+        }
+        a{
+            text-decoration: none;
+            color: turquoise;
+        }
 
         /* .d30{
             color: aqua;
@@ -53,58 +69,63 @@
 </head>
 
 <body>
-    <div class="calendar">
-        <div class="header">
-            <h1>Check Calendar</h1>
+    <main>
+        <div class="calendar">
+            <div class="header">
+                <h1>Check Calendar</h1>
+            </div>
+            <div class="calendarMark">
+                <section class="dayNames">
+                    <div class="dayName">Sun</div>
+                    <div class="dayName">Mon</div>
+                    <div class="dayName">Tue</div>
+                    <div class="dayName">Wed</div>
+                    <div class="dayName">Thu</div>
+                    <div class="dayName">Fri</div>
+                    <div class="dayName">Sat</div>
+                </section>
+    
+                <section class="days">
+                    <div id="" class="day"></div>
+                    <div class="day"> <span id="reset"> Reset </span></div>
+                    <div id="1" class="day">1</div>
+                    <div id="2" class="day">2</div>
+                    <div id="3" class="day">3</div>
+                    <div id="4" class="day">4</div>
+                    <div id="5" class="day">5</div>
+                    <div id="6" class="day">6</div>
+                    <div id="7" class="day">7</div>
+                    <div id="8" class="day">8</div>
+                    <div id="9" class="day">9</div>
+                    <div id="10" class="day">10</div>
+                    <div id="11" class="day">11</div>
+                    <div id="12" class="day">12</div>
+                    <div id="13" class="day">13</div>
+                    <div id="14" class="day">14</div>
+                    <div id="15" class="day">15</div>
+                    <div id="16" class="day">16</div>
+                    <div id="17" class="day">17</div>
+                    <div id="18" class="day">18</div>
+                    <div id="19" class="day">19</div>
+                    <div id="20" class="day">20</div>
+                    <div id="21" class="day">21</div>
+                    <div id="22" class="day">22</div>
+                    <div id="23" class="day">23</div>
+                    <div id="24" class="day">24</div>
+                    <div id="25" class="day">25</div>
+                    <div id="26" class="day">26</div>
+                    <div id="27" class="day">27</div>
+                    <div id="28" class="day">28</div>
+                    <div id="29" class="day">29</div>
+                    <div id="30" class="day">30</div>
+                    <div id="31" class="day">31</div>
+                </section>
+            </div>
         </div>
-        <div class="calendarMark">
-            <section class="dayNames">
-                <div class="dayName">Sun</div>
-                <div class="dayName">Mon</div>
-                <div class="dayName">Tue</div>
-                <div class="dayName">Wed</div>
-                <div class="dayName">Thu</div>
-                <div class="dayName">Fri</div>
-                <div class="dayName">Sat</div>
-            </section>
-
-            <section class="days">
-                <div id="" class="day"></div>
-                <div class=""> <span id="reset"> Reset </span></div>
-                <div id="1" class="day">1</div>
-                <div id="2" class="day">2</div>
-                <div id="3" class="day">3</div>
-                <div id="4" class="day">4</div>
-                <div id="5" class="day">5</div>
-                <div id="6" class="day">6</div>
-                <div id="7" class="day">7</div>
-                <div id="8" class="day">8</div>
-                <div id="9" class="day">9</div>
-                <div id="10" class="day">10</div>
-                <div id="11" class="day">11</div>
-                <div id="12" class="day">12</div>
-                <div id="13" class="day">13</div>
-                <div id="14" class="day">14</div>
-                <div id="15" class="day">15</div>
-                <div id="16" class="day">16</div>
-                <div id="17" class="day">17</div>
-                <div id="18" class="day">18</div>
-                <div id="19" class="day">19</div>
-                <div id="20" class="day">20</div>
-                <div id="21" class="day">21</div>
-                <div id="22" class="day">22</div>
-                <div id="23" class="day">23</div>
-                <div id="24" class="day">24</div>
-                <div id="25" class="day">25</div>
-                <div id="26" class="day">26</div>
-                <div id="27" class="day">27</div>
-                <div id="28" class="day">28</div>
-                <div id="29" class="day">29</div>
-                <div id="30" class="day">30</div>
-                <div id="31" class="day">31</div>
-            </section>
-        </div>
-    </div>
+    </main>
+    <footer class="footer">
+        &copy; Copyright 2023 by <a href="https://github.com/NFRIDOY">NF Ridoy</a>. All Rights Reserved.<br />
+    </footer>
     <!-- Generate the calendar days -->
     <!--For simplicity, let's manually create the days for a 31-day month -->
     <!--You can use JavaScript or server - side scripting for dynamic generation-->
