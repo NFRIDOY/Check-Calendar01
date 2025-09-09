@@ -21,6 +21,11 @@
             color: white;
             text-align: center;
             padding: 10px;
+            padding-bottom: 10px;
+        }
+
+        h1 {
+            margin-bottom: 0px;
         }
 
         .days {
@@ -62,7 +67,11 @@
             margin-bottom: 30px;
             font-size: small;
         }
-        a{
+        h2 a {
+            color: #fff;
+        }
+
+        footer a {
             text-decoration: none;
             color: turquoise;
         }
@@ -74,6 +83,56 @@
         .note1{
             color: red;
             font-size: 12px;
+        }
+
+        .month-year-selection {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+        #month-input, #year-input {
+            padding: 5px;
+            margin-right: 5px;
+            border-radius: 10px;
+            border: 1px solid;
+            width: 100px;
+        }
+
+        @media (max-width: 400px) {
+            .month-year-selection {
+                flex-direction: column;
+            }
+
+            #month-input, #year-input {
+                margin-bottom: 5px;
+                width: 80%;
+            }
+        }
+
+        #save-month-year {
+            padding: 7px 12px;
+            background-color: #333;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 10px;
+        }
+
+        #save-month-year:hover {
+            background-color: #555;
+        }
+
+        h2 {
+            font-size: 1em;
+            font-weight: 400;
+            margin-top: 0px;
+        }
+
+        .link-style{
+            color: turquoise;
         }
 
         /* .d30{
@@ -88,8 +147,14 @@
         <p class="note">Note: If You Are An Old User Click Reset Button when It's A New Month.</p>
         <div class="calendar">
             <div class="header">
-                <h1>Check Calendar</h1>
-                <h6>By <a href="https://github.com/NFRIDOY">NF RIDOY</a></h6>
+                <h1 id="calendar-title">Check Calendar</h1>
+                <h6>By <a href="https://github.com/NFRIDOY" class="link-style">NF RIDOY</a></h6>
+                <h2 id="calendar-subtitle"></h2>
+                <div class="month-year-selection">
+                    <input type="text" id="month-input" placeholder="Month">
+                    <input type="text" id="year-input" placeholder="Year">
+                    <button id="save-month-year">Save</button>
+                </div>
             </div>
             <div class="calendarMark">
                 <section class="dayNames">
@@ -240,6 +305,40 @@
         for (let i = 1; i <= 31; i++) {
             dayX(i);
         }
+
+
+        /* Save and load month and year */
+        const monthInput = document.getElementById('month-input');
+        const yearInput = document.getElementById('year-input');
+        const saveButton = document.getElementById('save-month-year');
+
+        function saveMonthYear() {
+            const month = monthInput.value;
+            const year = yearInput.value;
+            if (month && year) {
+                localStorage.setItem('month', month);
+                localStorage.setItem('year', year);
+                document.getElementById('calendar-subtitle').textContent = `${month} ${year}`;
+                alert(`Saved: ${month} ${year}`);
+            } else {
+                alert('Please enter both month and year.');
+            }
+        }
+
+        function loadMonthYear() {
+            const savedMonth = localStorage.getItem('month');
+            const savedYear = localStorage.getItem('year');
+            if (savedMonth && savedYear) {
+                monthInput.value = savedMonth;
+                yearInput.value = savedYear;
+                document.getElementById('calendar-subtitle').textContent = `${savedMonth} ${savedYear}`;
+            }
+        }
+
+        saveButton.addEventListener('click', saveMonthYear);
+
+        // Load saved values on page load
+        loadMonthYear();
 
 
 
