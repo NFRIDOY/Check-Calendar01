@@ -335,10 +335,21 @@
             }
         }
 
+        function resetOnFirstLoad() {
+            for (let i = 1; i <= 31; i++) {
+                if (!localStorage.getItem(i)) {
+                    localStorage.setItem(i, false);
+                }
+            }
+        }
+
         saveButton.addEventListener('click', saveMonthYear);
 
         // Load saved values on page load
-        loadMonthYear();
+        window.onload = function() {
+            loadMonthYear();
+            resetOnFirstLoad();
+        };
 
 
 
